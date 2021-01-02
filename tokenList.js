@@ -25,6 +25,7 @@ function updateUniswapTopTokens() {
             }
         }
         console.log('updated uniswap top token list')
+        console.log(tier2)
     }).catch (e => { console.error(e) })
 }
 

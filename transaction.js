@@ -2,7 +2,7 @@ import { routerDecoder, factoryDecoder, pairDecoder, oneinchDecoder, readTokenBa
 import {E18, REPORT_THRESHOLD_DOLLAR, ETH_PRICE_APPROX} from './const'
 import {getPrices, getCachedPrice, cutDecimals} from './price'
 import { saveActionsToDatabase } from './database'
-import { isTrustedCoin } from './coinlist'
+import { isTrustedCoin, USD_STABLECOINS, BTC_STABLECOINS } from './coinlist'
 import logger from './common/logger'
 
 const QUEUE_SIZE = 3
@@ -77,6 +77,11 @@ async function processRawActionData(action) {
     }
     
     if (action.dollarValue < REPORT_THRESHOLD_DOLLAR) return null
+    
+    // ignore swapping stablecoins
+    if (USD_STABLECOINS[action.token0Name] && USD_STABLECOINS[action.token1Name]) return null
+    
+    if (BTC_STABLECOINS[action.token0Name] && BTC_STABLECOINS[action.token1Name]) return null
     
     return action
 }
