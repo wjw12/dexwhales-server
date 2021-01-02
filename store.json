@@ -1,0 +1,22 @@
+{
+  "index": [
+    {
+      "key": "cache_namekey1",
+      "val": 1,
+      "life": 1609206367627,
+      "tags": []
+    },
+    {
+      "key": "cache_namea",
+      "val": 1,
+      "life": 1609206369250,
+      "tags": []
+    },
+    {
+      "key": "cache_nameb",
+      "val": "hello",
+      "life": 1609206369251,
+      "tags": []
+    }
+  ]
+}
