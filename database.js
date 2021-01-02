@@ -21,6 +21,7 @@ AWS.config.update({
 var dynamoClient = new AWS.DynamoDB.DocumentClient();
 
 function isWhaleAction(action) {
+    if (action.newPair) return true  // reportable new pairs are recorded
     var tier = getTier(action)
     switch (tier) {
         case 1:

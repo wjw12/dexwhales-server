@@ -170,7 +170,8 @@ async function batchProcessRouterCalls() {
         if (!tx.name.includes('ETH')) {
             var txParams = {'0': {}, '1': {}}
             if (tx.name.includes('Liquidity')) {
-                tx.params.forEach(item => { // ETH already handled above
+                // add liquity of two tokens (if one side is ETH, already handled above)
+                tx.params.forEach(item => {
                     if (item.name === 'tokenA') {
                         txParams['0'].token = item.value
                     }
@@ -263,12 +264,15 @@ async function reportTransactions(txs) {
         else if (tx.name.includes('addLiquidity')) {
             for (var logEvent of decodedLogs) {
                 if (!logEvent || !logEvent.name) continue
-                if (logEvent.name === 'Mint') {
+                if (logEvent.name === 'Mint') { // Mint LP tokens
                     action.token0Amount = parseInt(logEvent.events[1].value)
                     action.token1Amount = parseInt(logEvent.events[2].value)
                     var pairInfo = await readPairBasic(logEvent.address) // pair address
                     action.token0 = pairInfo.token0
                     action.token1 = pairInfo.token1
+                }
+                else if (logEvent.name === 'PairCreated') { // new pair created
+                    action.newPair = true
                 }
             }
             
