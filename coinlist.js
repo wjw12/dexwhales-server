@@ -94,5 +94,5 @@ export function getCoinId(symbol) {
 }
 
 export function isTrustedCoin(address) {
-    return TRUSTED_COIN_ADDRESS_LIST.hasOwnProperty(address)
+    return TRUSTED_COIN_ADDRESS_LIST.hasOwnProperty(address.toLowerCase())
 }

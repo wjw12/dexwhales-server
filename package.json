@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r esm index.js > .log 2>&1 &",
+    "start": "npm run clean && node -r esm index.js > .log 2>&1 &",
     "debugStart": "DEBUG=true node -r esm index.js",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "clean": "rm -f *.cache && rm -f .log"
   },
   "author": "",
   "license": "ISC",

@@ -219,6 +219,9 @@ async function reportTransactions(txs) {
     var storeList = [] // to be stored in database
     for (var tx of txs) {
         var decodedLogs = pairDecoder._decodeLogs(tx.logs)
+        var decodedFactoryLogs = factoryDecoder._decodeLogs(tx.logs) // will be an empty list if no factory calls
+        // PairCreated Event is from Factory
+        decodedLogs = decodedLogs.concat(decodedFactoryLogs) 
         var action = {} // name, sender, from, to, fromAmount, toAmount
         
         if (tx.name.includes('swap')) {
