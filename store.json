@@ -282,12 +282,6 @@
       "tags": []
     },
     {
-      "key": "coingecko_pricebcs",
-      "val": 0.166885,
-      "life": 1610255353739,
-      "tags": []
-    },
-    {
       "key": "coingecko_priceauc",
       "val": 0.110777,
       "life": 1610255365037,
@@ -599,12 +593,6 @@
       "tags": []
     },
     {
-      "key": "coingecko_pricerevv",
-      "val": 0.059773,
-      "life": 1610256101008,
-      "tags": []
-    },
-    {
       "key": "coingecko_priceswap",
       "val": 0.765933,
       "life": 1610256101009,
@@ -887,12 +875,6 @@
       "tags": []
     },
     {
-      "key": "coingecko_pricebond",
-      "val": 0.0124792,
-      "life": 1610256441825,
-      "tags": []
-    },
-    {
       "key": "coingecko_priceacxt",
       "val": 0.438475,
       "life": 1610256442308,
@@ -929,12 +911,6 @@
       "tags": []
     },
     {
-      "key": "coingecko_priceyfl",
-      "val": 1000.82,
-      "life": 1610256498208,
-      "tags": []
-    },
-    {
       "key": "coingecko_priceppay",
       "val": 0.02570575,
       "life": 1610256498783,
@@ -956,12 +932,6 @@
       "key": "coingecko_priceusdx",
       "val": 0.0133083,
       "life": 1610256637526,
-      "tags": []
-    },
-    {
-      "key": "coingecko_pricebadger",
-      "val": 8.65,
-      "life": 1610256653712,
       "tags": []
     },
     {
@@ -1031,12 +1001,6 @@
       "tags": []
     },
     {
-      "key": "coingecko_pricepha",
-      "val": 0.114157,
-      "life": 1610256701569,
-      "tags": []
-    },
-    {
       "key": "coingecko_pricenexo",
       "val": 0.623238,
       "life": 1610256701815,
@@ -1091,27 +1055,9 @@
       "tags": []
     },
     {
-      "key": "coingecko_priceweth",
-      "val": 1330.52,
-      "life": 1610256757150,
-      "tags": []
-    },
-    {
       "key": "coingecko_pricesxp",
       "val": 1.11,
       "life": 1610256757151,
-      "tags": []
-    },
-    {
-      "key": "coingecko_priceusdc",
-      "val": 0.998302,
-      "life": 1610256760930,
-      "tags": []
-    },
-    {
-      "key": "coingecko_pricesushi",
-      "val": 4.71,
-      "life": 1610256761914,
       "tags": []
     },
     {
@@ -1214,6 +1160,78 @@
       "key": "coingecko_priceaudio",
       "val": 0.196655,
       "life": 1610256866347,
+      "tags": []
+    },
+    {
+      "key": "coingecko_priceusdc",
+      "val": 0.998302,
+      "life": 1610256893774,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricesushi",
+      "val": 4.71,
+      "life": 1610256893802,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricetone",
+      "val": 0.01246581,
+      "life": 1610256894000,
+      "tags": []
+    },
+    {
+      "key": "coingecko_priceweth",
+      "val": 1328.83,
+      "life": 1610256894033,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricebcs",
+      "val": 0.166885,
+      "life": 1610256898419,
+      "tags": []
+    },
+    {
+      "key": "coingecko_priceyfl",
+      "val": 978.42,
+      "life": 1610256898421,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricebond",
+      "val": 0.01245005,
+      "life": 1610256898467,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricebadger",
+      "val": 8.63,
+      "life": 1610256898670,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricefree",
+      "val": 5.3e-7,
+      "life": 1610256898999,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricepha",
+      "val": 0.114078,
+      "life": 1610256899002,
+      "tags": []
+    },
+    {
+      "key": "coingecko_priceusds",
+      "val": 1.01,
+      "life": 1610256899264,
+      "tags": []
+    },
+    {
+      "key": "coingecko_pricerevv",
+      "val": 0.059809,
+      "life": 1610256899265,
       "tags": []
     }
   ]
