@@ -5,6 +5,7 @@ import { saveActionsToDatabase } from './database'
 import { isTrustedCoin, USD_STABLECOINS, BTC_STABLECOINS } from './coinlist'
 import logger from './common/logger'
 
+
 const QUEUE_SIZE = 3
 
 var routerQueue = []

@@ -5,6 +5,7 @@ import { WHALE_THRESHOLD_DOLLAR_TIER1,
     WHALE_THRESHOLD_DOLLAR_TIER3 
 } from './const'
 import { getTier } from './tokenList'
+import { postTwitter } from './twitter'
 import logger from './common/logger'
 
 var AWS = require('aws-sdk');
@@ -114,5 +115,11 @@ export async function saveActionsToDatabase(actions) {
             logger.log('[saveActionsToDatabase] error', err)
         }
     })
+    
+    
+    // if very large transaction, post a tweet
+    if ((action.tier == 1 && action.dollarValue > 2000000) || action.dollarValue > 1000000) {
+        postTwitter(action)
+    } 
     
 }

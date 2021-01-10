@@ -30,8 +30,8 @@ export async function getPrices(symbols) {
             if (!coinId) {
                 result[symbol] = null
             }
-            else if (priceCache[symbol]) {
-                result[symbol] = priceCache[symbol]
+            else if (priceCache.get(symbol)) {
+                result[symbol] = priceCache.get(symbol)
             }
             else {
                 coinsToFetch.push(symbol)
@@ -53,7 +53,7 @@ export async function getPrices(symbols) {
                     if (body.hasOwnProperty(coinId)) {
                         var price = body[coinId].usd
                         var symbol = COINID_TO_SYMBOL[coinId]
-                        priceCache[symbol] = price
+                        priceCache.set(symbol, price)
                         result[symbol] = price
                     }
                 }
@@ -79,11 +79,11 @@ export function getCachedPrice(addressOrSymbol, amount) {
     if (addressOrSymbol.startsWith('0x')) {
         var info = readCachedTokenBasic(addressOrSymbol)
         var symbol = info.symbol.toLowerCase()
-        return priceCache[symbol]
+        return priceCache.get(symbol)
     }
     else {
         var symbol = addressOrSymbol.toLowerCase()
-        return priceCache[symbol]
+        return priceCache.get(symbol)
     }
 }
 
