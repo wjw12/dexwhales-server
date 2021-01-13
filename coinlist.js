@@ -7,7 +7,10 @@ export const USD_STABLECOINS = {
   'GUSD': true,
   'TUSD': true,
   'HUSD': true,
-  'DAI': true
+  'DAI': true,
+  'BUSD': true,
+  'sUSD': true,
+  'SUSD': true
 }
 
 export const BTC_STABLECOINS = {
