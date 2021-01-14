@@ -40,6 +40,17 @@ function getTxLink(hash) {
     return "https://etherscan.io/tx/" + hash
 }
 
+function formatToken(symbol) {
+    var addDollar = true
+    for (var letter of symbol) {
+        if( letter.toUpperCase() == letter.toLowerCase() ) { // non-letter
+            addDollar = false
+            break
+        }
+    }
+    return addDollar ? '$'+symbol : symbol
+}
+
 function getContent(action) {
     var action_type = action.name // string: Swap, AddLiquidity, RemoveLiquidity
     var whales = ""
@@ -97,8 +108,8 @@ function getContent(action) {
     
     var link = getTxLink(action.hash)
 
-    return whales + ' ' + action_type + ' ' + formatNumber(action.token0Amount) + ' ' + action.token0Name + (price0 ? price0 : '') + 
-      conjunct + formatNumber(action.token1Amount) + ' ' + action.token1Name + (price1 ? price1 : '') + ' at ' + marketName + ' tx: ' + link
+    return whales + ' ' + action_type + ' ' + formatNumber(action.token0Amount) + ' ' + formatToken(action.token0Name) + (price0 ? price0 : '') + 
+      conjunct + formatNumber(action.token1Amount) + ' ' + formatToken(action.token1Name) + (price1 ? price1 : '') + ' at ' + marketName + ' tx: ' + link
 }
 
 export function postTwitter(action) {

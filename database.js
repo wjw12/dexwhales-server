@@ -118,7 +118,9 @@ export async function saveActionsToDatabase(actions) {
     
     
     // if very large transaction, post a tweet
-    if ((action.tier == 1 && action.dollarValue > 2000000) || action.dollarValue > 1000000) {
+    if ((action.tier == 1 && action.dollarValue > 4000000) || 
+      (action.tier == 2 && action.dollarValue > 2000000) ||
+      (action.tier == 1 && action.dollarValue > 1000000)) {
         postTwitter(action)
     } 
     
